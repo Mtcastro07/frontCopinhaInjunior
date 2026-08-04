@@ -1,0 +1,111 @@
+.division-header-page {
+  display: flex;
+  height: 100vh;
+}
+
+.dashboard-header {
+  padding: 16px 0px 16px 39px;
+  background-color: #12283f;
+  width: 100vw;
+  border-bottom: solid #ffffff38 1px;
+}
+
+.title-dashboard {
+  font-family: Barlow Condensed;
+  font-weight: 900;
+  font-style: Black;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  color: white;
+}
+
+.card-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 16px;
+  background-color: #009c3b17;
+  width: 107px;
+  height: 100px;
+  border-radius: 8px;
+  border: solid 1px #ffffff3d;
+}
+.card-number-dashboard {
+  color: white;
+  font-family: Barlow Condensed;
+  font-weight: 900;
+  font-style: Black;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 0px;
+}
+
+.card-title-dashboard {
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: #8ba3bc;
+  padding: 0;
+  margin: 0;
+}
+
+.card-subtitle-dashboard {
+  font-family: DM Mono;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  leading-trim: NONE;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: #8ba3bc99;
+}
+
+.dashboard-main-page {
+  background-color: #0f172a;
+  height: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cards-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+  padding-top: 32px;
+}
+
+.latestNews-header {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  border-bottom: #ffffff3d solid 1px;
+  padding: 15px 0px 15px 16px;
+  width: 672px;
+  align-items: center;
+}
+
+.latestNews-title-header {
+  font-family: Barlow Condensed;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: white;
+}
+
+.latestNews-dashboard {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #ffffff14;
+  width: 688px;
+}

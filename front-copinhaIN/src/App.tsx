@@ -1,10 +1,9 @@
-import Home from "./admin/pages/Home";
+import Dashboard from "./admin/pages/Dashboard";
 
 function App() {
   return (
     <>
-      <Home />; oi
-      <p>oi</p>
+      <Dashboard />
     </>
   );
 }
