@@ -1,0 +1,81 @@
+.grupos-main-page {
+  background-color: #0f172a;
+  height: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.addgroup-button {
+  font-family: Barlow;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+  padding: 8px 16px 8px 16px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: #009c3b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.button-add-grupo {
+  display: flex;
+  align-self: flex-end;
+  margin-right: 300px;
+  margin-bottom: 32px;
+  margin-top: 20px;
+}
+
+.grupo-infos {
+  color: white;
+  display: flex;
+  font-family: DM Mono;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  gap: 308px;
+  padding: 12px 0px 13px 16px;
+  border-bottom: solid #ffffff14 1px;
+}
+.grupo-container {
+  display: flex;
+  flex-direction: column;
+  width: 790px;
+  min-height: 41px;
+  border: solid #ffffff14 1px;
+  border-radius: 6px;
+  align-self: center;
+  margin-right: 200px;
+}
+
+.grupo {
+  color: white;
+  display: flex;
+  font-family: DM Mono;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  gap: 238px;
+  padding: 12px 0px 13px 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: solid #ffffff14 1px;
+}
+
+.title-grupo {
+  font-family: Inter;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0px;
+}

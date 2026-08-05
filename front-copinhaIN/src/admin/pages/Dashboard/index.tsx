@@ -8,6 +8,20 @@ import Escudo from "./icons/escudoIcon";
 import EstadioIcon from "./icons/estadioIcon";
 import axios from "axios";
 
+export interface Noticia {
+  id: number;
+  idGrupo: number;
+  autorId: number;
+  autor: string;
+  publicId: string;
+  titulo: string;
+  textoAbertura: string;
+  corpoTexto: string;
+  urlImagemCapa: string;
+  tempoLeitura: string;
+  dataPublicacao: string;
+}
+
 export default function Dashboard() {
   const [qntdNoticias, setQntdNoticas] = useState<number>(0);
   const [qntdTimes, setQntdTimes] = useState<number>(0);
@@ -15,6 +29,7 @@ export default function Dashboard() {
   const [qntdGrupos, setQntdGrupos] = useState<number>(0);
   const [qntdJogos, setQntdJogos] = useState<number>(0);
   const [qntdJogosAgendados, setQntdJogosAgendados] = useState<number>(0);
+  const [noticia, setNoticia] = useState<Noticia[]>();
 
   useContagem(setQntdNoticas, "urlNoticias");
   useContagem(setQntdTimes, "urlTimes");
@@ -40,23 +55,21 @@ export default function Dashboard() {
   }, []);
 
   useEffect(() => {
-    async function carregarCincoNoticias() {
+    async function carregarNoticias() {
       const response = await axios.get("urlNoticias");
-      const dados = response.data;
-      let noticias = [];
-
-      for (let i = 0; i < 5; i++) {
-        noticias.push(dados[i]);
-      }
-      return noticias;
+      let noticias = response.data;
+      let cincoNoticias = [...noticias].sort(
+        (a: Noticia, b: Noticia) =>
+          new Date(b.dataPublicacao).getTime() -
+          new Date(a.dataPublicacao).getTime(),
+      );
+      cincoNoticias = cincoNoticias.slice(0, 5);
+      return setNoticia(cincoNoticias);
     }
-    let cincoNoticias = carregarCincoNoticias();
+    carregarNoticias();
   }, []);
 
   const imagem = "imagem";
-  const tempo = "tempo";
-  const autor = "autor ";
-  const titulo = "titulo";
 
   return (
     <>
@@ -107,14 +120,16 @@ export default function Dashboard() {
               <div className="latestNews-card">
                 <img
                   className="latestNews-authorImage"
-                  src={imagem}
+                  src={noticia?.[0].urlImagemCapa}
                   alt="imagem"
                 ></img>
                 <div className="latestNews-textcontent">
-                  <h5 className="title-latestNew">{titulo}</h5>
+                  <h5 className="title-latestNew">{noticia?.[0].titulo}</h5>
                   <div className="subtitle-latestNews">
-                    <p className="author-latestNews">{autor}</p>{" "}
-                    <p className="span-latestNews">· {tempo} min de leitura</p>
+                    <p className="author-latestNews">{noticia?.[0].autor}</p>{" "}
+                    <p className="span-latestNews">
+                      · {noticia?.[0].tempo} min de leitura
+                    </p>
                   </div>
                 </div>
               </div>
@@ -125,10 +140,12 @@ export default function Dashboard() {
                   alt="imagem"
                 ></img>
                 <div className="latestNews-textcontent">
-                  <h5 className="title-latestNew">{titulo}</h5>
+                  <h5 className="title-latestNew">{noticia?.[1].titulo}</h5>
                   <div className="subtitle-latestNews">
-                    <p className="author-latestNews">{autor}</p>{" "}
-                    <p className="span-latestNews">· {tempo} min de leitura</p>
+                    <p className="author-latestNews">{noticia?.[1].autor}</p>{" "}
+                    <p className="span-latestNews">
+                      · {noticia?.[1].tempoLeitura} min de leitura
+                    </p>
                   </div>
                 </div>
               </div>
@@ -139,10 +156,12 @@ export default function Dashboard() {
                   alt="imagem"
                 ></img>
                 <div className="latestNews-textcontent">
-                  <h5 className="title-latestNew">{titulo}</h5>
+                  <h5 className="title-latestNew">{noticia?.[2].titulo}</h5>
                   <div className="subtitle-latestNews">
-                    <p className="author-latestNews">{autor}</p>{" "}
-                    <p className="span-latestNews">· {tempo} min de leitura</p>
+                    <p className="author-latestNews">{noticia?.[2].autor}</p>{" "}
+                    <p className="span-latestNews">
+                      · {noticia?.[2].tempoLeitura} min de leitura
+                    </p>
                   </div>
                 </div>
               </div>
@@ -153,10 +172,12 @@ export default function Dashboard() {
                   alt="imagem"
                 ></img>
                 <div className="latestNews-textcontent">
-                  <h5 className="title-latestNew">{titulo}</h5>
+                  <h5 className="title-latestNew">{noticia?.[3].titulo}</h5>
                   <div className="subtitle-latestNews">
-                    <p className="author-latestNews">{autor}</p>{" "}
-                    <p className="span-latestNews">· {tempo} min de leitura</p>
+                    <p className="author-latestNews">{noticia?.[3].autor}</p>{" "}
+                    <p className="span-latestNews">
+                      · {noticia?.[3].tempoLeitura} min de leitura
+                    </p>
                   </div>
                 </div>
               </div>
@@ -167,10 +188,12 @@ export default function Dashboard() {
                   alt="imagem"
                 ></img>
                 <div className="latestNews-textcontent">
-                  <h5 className="title-latestNew">{titulo}</h5>
+                  <h5 className="title-latestNew">{noticia?.[4].titulo}</h5>
                   <div className="subtitle-latestNews">
-                    <p className="author-latestNews">{autor}</p>{" "}
-                    <p className="span-latestNews">· {tempo} min de leitura</p>
+                    <p className="author-latestNews">{noticia?.[4].autor}</p>{" "}
+                    <p className="span-latestNews">
+                      · {noticia?.[4].tempoLeitura} min de leitura
+                    </p>
                   </div>
                 </div>
               </div>
