@@ -20,6 +20,7 @@ export default function Dashboard() {
   useContagem(setQntdTimes, "urlTimes");
   useContagem(setQntdJogos, "urlJogos");
   useContagem(setQntdEstadios, "urlEstadios");
+  useContagem(setQntdGrupos, "urlGrupos");
 
   useEffect(() => {
     async function filtrarJogosAgendados() {
@@ -37,6 +38,25 @@ export default function Dashboard() {
 
     carregarJogosAgendados();
   }, []);
+
+  useEffect(() => {
+    async function carregarCincoNoticias() {
+      const response = await axios.get("urlNoticias");
+      const dados = response.data;
+      let noticias = [];
+
+      for (let i = 0; i < 5; i++) {
+        noticias.push(dados[i]);
+      }
+      return noticias;
+    }
+    let cincoNoticias = carregarCincoNoticias();
+  }, []);
+
+  const imagem = "imagem";
+  const tempo = "tempo";
+  const autor = "autor ";
+  const titulo = "titulo";
 
   return (
     <>
@@ -83,6 +103,76 @@ export default function Dashboard() {
               <div className="latestNews-header">
                 <NoticiaIcon />
                 <p className="latestNews-title-header">ÚLTIMAS NOTÍCIAS</p>
+              </div>
+              <div className="latestNews-card">
+                <img
+                  className="latestNews-authorImage"
+                  src={imagem}
+                  alt="imagem"
+                ></img>
+                <div className="latestNews-textcontent">
+                  <h5 className="title-latestNew">{titulo}</h5>
+                  <div className="subtitle-latestNews">
+                    <p className="author-latestNews">{autor}</p>{" "}
+                    <p className="span-latestNews">· {tempo} min de leitura</p>
+                  </div>
+                </div>
+              </div>
+              <div className="latestNews-card">
+                <img
+                  className="latestNews-authorImage"
+                  src={imagem}
+                  alt="imagem"
+                ></img>
+                <div className="latestNews-textcontent">
+                  <h5 className="title-latestNew">{titulo}</h5>
+                  <div className="subtitle-latestNews">
+                    <p className="author-latestNews">{autor}</p>{" "}
+                    <p className="span-latestNews">· {tempo} min de leitura</p>
+                  </div>
+                </div>
+              </div>
+              <div className="latestNews-card">
+                <img
+                  className="latestNews-authorImage"
+                  src={imagem}
+                  alt="imagem"
+                ></img>
+                <div className="latestNews-textcontent">
+                  <h5 className="title-latestNew">{titulo}</h5>
+                  <div className="subtitle-latestNews">
+                    <p className="author-latestNews">{autor}</p>{" "}
+                    <p className="span-latestNews">· {tempo} min de leitura</p>
+                  </div>
+                </div>
+              </div>
+              <div className="latestNews-card">
+                <img
+                  className="latestNews-authorImage"
+                  src={imagem}
+                  alt="imagem"
+                ></img>
+                <div className="latestNews-textcontent">
+                  <h5 className="title-latestNew">{titulo}</h5>
+                  <div className="subtitle-latestNews">
+                    <p className="author-latestNews">{autor}</p>{" "}
+                    <p className="span-latestNews">· {tempo} min de leitura</p>
+                  </div>
+                </div>
+              </div>
+              <div className="latestNews-card">
+                <img
+                  className="latestNews-authorImage"
+                  src={imagem}
+                  alt="imagem"
+                ></img>
+                <div className="latestNews-textcontent">
+                  <h5 className="title-latestNew">{titulo}</h5>
+                  <div className="subtitle-latestNews">
+                    <p className="author-latestNews">{autor}</p>{" "}
+                    <p className="span-latestNews">· {tempo} min de leitura</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
