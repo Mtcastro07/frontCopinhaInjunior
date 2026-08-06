@@ -1,0 +1,126 @@
+.addstadium-button-admin {
+  font-family: Barlow;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+  padding: 8px 16px 8px 16px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: #009c3b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  margin-right: 400px;
+  margin-top: 20px;
+  margin-bottom: 32px;
+}
+
+.estadios-admin-page {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  background-color: #0d1b2a;
+  height: 100vh;
+}
+
+.button-estadios-div {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+
+.estadios-admin {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: solid 1px #ffffff0a;
+}
+
+.estadios-titulo-admin {
+  display: flex;
+  align-items: center;
+  font-family: DM Mono;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  padding: 12px 16px 13px 12px;
+  width: 790px;
+  border-bottom: solid 1px #ffffff0a;
+  color: white;
+}
+
+.estadio-titulo-admin {
+  margin-right: 229px;
+}
+.capacidade-estadio-admin {
+  margin-left: auto;
+}
+.estadio-admin-list {
+  width: 790px;
+}
+
+.estadio-admin {
+  display: flex;
+  padding: 12px 16px 13px 12px;
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: white;
+}
+
+.capacidade-estadio-admin-bd {
+  position: absolute;
+  left: 745px;
+}
+
+.estadio-titulo-admin-bd {
+  font-family: Barlow;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: white;
+}
+
+.cidade-estadio-admin-bd {
+  position: absolute;
+  left: 270px;
+}
+
+.icone-estadio-editar-admin {
+  position: absolute;
+  left: 950px;
+  bottom: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icone-estadio-apagar-admin {
+  position: absolute;
+  left: 978px;
+  bottom: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.estadios-admin-list {
+  background-color: #132236;
+  width: 1005px;
+  border-radius: 8px;
+  margin-left: 50px;
+}

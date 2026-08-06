@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import type { setState } from "../components/header/header";
+import axios from "axios";
 
 export default function useContagem(setEstado: setState, url: string) {
   useEffect(() => {

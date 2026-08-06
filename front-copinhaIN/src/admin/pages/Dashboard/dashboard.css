@@ -1,12 +1,12 @@
 .division-header-page {
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 .dashboard-header {
   padding: 16px 0px 16px 39px;
   background-color: #12283f;
-  width: 100vw;
+  width: 100%;
   border-bottom: solid #ffffff38 1px;
 }
 
