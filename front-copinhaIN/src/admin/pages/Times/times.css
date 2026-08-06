@@ -4,10 +4,10 @@
   display: flex;
   flex-direction: column;
 }
+
 .times-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   margin-right: 300px;
 }
 
@@ -40,4 +40,90 @@
   display: flex;
   align-self: flex-end;
   margin: 20px 300px 32px 0px;
+}
+
+.logo-nome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.grupo-time {
+  font-family: Barlow Condensed;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 8px;
+  border-radius: 4px;
+  background-color: #00277680;
+  width: 28px;
+}
+
+.logo-grupo-time {
+  display: flex;
+  align-items: center;
+  gap: 223px;
+}
+
+.pontuacoes-time {
+  display: flex;
+  color: #8ba3bc;
+  gap: 51px;
+  font-family: DM Mono;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.buttons-edit-delete-time {
+  display: flex;
+  gap: 6px;
+}
+
+.pontosTotais-time {
+  font-family: Barlow Condensed;
+  font-weight: 900;
+  font-style: Black;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: white;
+}
+
+.name-time {
+  font-family: Barlow;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  color: white;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.username-time {
+  font-family: DM Mono;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: #8ba3bc;
+}
+
+.time {
+  display: flex;
+  gap: 83px;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 16px 13px 16px;
 }

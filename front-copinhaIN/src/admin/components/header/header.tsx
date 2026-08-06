@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./header.css";
 import useContagem from "../../hooks/useContagem";
+import logo from "../../../../public/logoCopinha.png";
 
 export type setState = (valor: number) => void;
 
@@ -48,40 +49,7 @@ export default function HeaderAdmin() {
         <div className="header-userInfos-admin">
           <div className="top-header-admin">
             <div className="icon-title-admin">
-              <svg
-                width="61"
-                height="62"
-                viewBox="0 0 61 62"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <rect
-                  width="61"
-                  height="62"
-                  transform="matrix(-1 0 0 1 61 0)"
-                  fill="url(#pattern0_145_668)"
-                />
-                <defs>
-                  <pattern
-                    id="pattern0_145_668"
-                    patternContentUnits="objectBoundingBox"
-                    width="1"
-                    height="1"
-                  >
-                    <use
-                      xlink:href="#image0_145_668"
-                      transform="matrix(0.00322004 0 0 0.00320276 -0.586762 -0.0909091)"
-                    />
-                  </pattern>
-                  <image
-                    id="image0_145_668"
-                    width="677"
-                    height="369"
-                    preserveAspectRatio="none"
-                  />
-                </defs>
-              </svg>
+              <img className="logo-image-header" src={logo}></img>
 
               <div className="title-subtitle-admin">
                 <h4 className="title-admin">

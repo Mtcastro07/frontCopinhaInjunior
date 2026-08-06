@@ -128,7 +128,7 @@ export default function Dashboard() {
                   <div className="subtitle-latestNews">
                     <p className="author-latestNews">{noticia?.[0].autor}</p>{" "}
                     <p className="span-latestNews">
-                      · {noticia?.[0].tempo} min de leitura
+                      · {noticia?.[0].tempoLeitura} min de leitura
                     </p>
                   </div>
                 </div>

@@ -23,6 +23,11 @@
   color: yellow;
 }
 
+.logo-image-header {
+  width: 102px;
+  height: 62px;
+}
+
 .title-admin {
   color: white;
   font-family: Barlow Condensed;
