@@ -7,6 +7,8 @@ import CheckIcon from "./icons/checkIcon";
 import Escudo from "./icons/escudoIcon";
 import EstadioIcon from "./icons/estadioIcon";
 import axios from "axios";
+import TrofeuIcon from "./icons/trofeuIcon";
+import type { Time } from "../Times";
 
 export interface Noticia {
   id: number;
@@ -22,6 +24,36 @@ export interface Noticia {
   dataPublicacao: string;
 }
 
+export interface Jogo {
+  id: string;
+  idTime1: string;
+  idTime2: string;
+  idGrup: number;
+  publicId: number;
+  date: string;
+  local: string;
+  situacao: string;
+  dataCriacao: string;
+  dataUltimaAlteracao: string;
+}
+
+export interface resultadoTime {
+  id: string;
+  publicId: string;
+  gols: number;
+  dataCriacao: string;
+}
+
+export interface resultadoPartida {
+  id: string;
+  nomeTimeA: string;
+  placarTimeA: number;
+  nomeTimeB: string;
+  placarTimeB: number;
+  idPartida: string;
+  criadoEm: string;
+}
+
 export default function Dashboard() {
   const [qntdNoticias, setQntdNoticas] = useState<number>(0);
   const [qntdTimes, setQntdTimes] = useState<number>(0);
@@ -30,12 +62,45 @@ export default function Dashboard() {
   const [qntdJogos, setQntdJogos] = useState<number>(0);
   const [qntdJogosAgendados, setQntdJogosAgendados] = useState<number>(0);
   const [noticia, setNoticia] = useState<Noticia[]>();
+  const [resultados, setResultados] = useState<resultadoPartida[]>([]);
+  const [jogos, setJogos] = useState<Jogo[]>([]);
+  const [times, setTimes] = useState<Time[]>([]);
 
   useContagem(setQntdNoticas, "urlNoticias");
   useContagem(setQntdTimes, "urlTimes");
   useContagem(setQntdJogos, "urlJogos");
   useContagem(setQntdEstadios, "urlEstadios");
   useContagem(setQntdGrupos, "urlGrupos");
+
+  useEffect(() => {
+    async function carregarResultados() {
+      const response = await axios.get("urlResultados");
+      let resultados = response.data;
+      let latestResultado = resultados.slice(0, 5);
+      latestResultado = resultados.sort(
+        (a: resultadoPartida, b: resultadoPartida) =>
+          new Date(b.criadoEm).getTime() - new Date(a.criadoEm).getTime(),
+      );
+      setResultados(latestResultado);
+    }
+    carregarResultados();
+  }, []);
+
+  useEffect(() => {
+    async function carregarJogos() {
+      const response = await axios.get("urlJogos");
+      return setJogos(response.data);
+    }
+    carregarJogos();
+  }, []);
+
+  useEffect(() => {
+    async function carregarTimes() {
+      const response = await axios.get("urlTimes");
+      return setTimes(response.data);
+    }
+    carregarTimes();
+  }, []);
 
   useEffect(() => {
     async function filtrarJogosAgendados() {
@@ -120,6 +185,21 @@ export default function Dashboard() {
               <div className="latestNews-card">
                 <img
                   className="latestNews-authorImage"
+                  src="imagem"
+                  alt="imagem"
+                ></img>
+                <div className="latestNews-textcontent">
+                  <h5 className="title-latestNew">Coisas</h5>
+                  <div className="subtitle-latestNews">
+                    <p className="author-latestNews">Gustavo</p>{" "}
+                    <p className="span-latestNews">· 1 min de leitura</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* <div className="latestNews-card">
+                <img
+                  className="latestNews-authorImage"
                   src={noticia?.[0].urlImagemCapa}
                   alt="imagem"
                 ></img>
@@ -196,6 +276,47 @@ export default function Dashboard() {
                     </p>
                   </div>
                 </div>
+              </div> */}
+            </div>
+            <div className="latestJogos-dashboard">
+              <div className="latestJogos-header">
+                <TrofeuIcon />
+                <p className="latestJogos-titulo-header">RESULTADOS RECENTES</p>
+              </div>
+              <div className="latestJogos-list">
+                {resultados.map((resultado) => {
+                  const jogosFiltrados = jogos.find(
+                    (jogo) => jogo.id == resultado.idPartida,
+                  );
+                  const time1 = times.find(
+                    (time) => time.id == jogosFiltrados?.idTime1,
+                  );
+                  const time2 = times.find(
+                    (time) => time.id == jogosFiltrados?.idTime2,
+                  );
+
+                  return (
+                    <div key={resultado.id} className="latestJogo">
+                      <div className="time1-latestJogo">
+                        <p>{time1?.urlImagemEscudo}</p>
+                        <p className="name-latestJogo">{time1?.sigla}</p>
+                      </div>
+                      <div className="resultado-latestJogo">
+                        <p className="resultado-jogoLatest">
+                          {resultado.placarTimeA}
+                        </p>
+                        <p className="resultado-jogoLatest">-</p>
+                        <p className="resultado-jogoLatest">
+                          {resultado.placarTimeB}
+                        </p>
+                      </div>
+                      <div className="time1-latestJogo">
+                        <p>{time2?.urlImagemEscudo}</p>
+                        <p className="name-latestJogo">{time2?.sigla}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

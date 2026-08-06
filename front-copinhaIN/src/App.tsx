@@ -5,7 +5,7 @@ import Times from "./admin/pages/Times";
 function App() {
   return (
     <>
-      <Times />
+      <Dashboard />
     </>
   );
 }

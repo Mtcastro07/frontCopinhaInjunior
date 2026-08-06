@@ -6,6 +6,7 @@ import { EditarIcon } from "./icones";
 import axios from "axios";
 
 export interface Time {
+  id: string;
   idGrupo: number;
   publicId: number;
   nome: string;

@@ -163,3 +163,77 @@
   border-radius: 4px;
   color: white;
 }
+
+.latestJogos-header {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 15px 0px 15px 16px;
+  gap: 8px;
+  background-color: #ffffff00;
+  width: 717px;
+  height: 41px;
+  border-bottom: solid 1px #ffffff14;
+}
+
+.latestJogos-titulo-header {
+  color: white;
+  font-family: Barlow Condensed;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.latestJogos-dashboard {
+  display: flex;
+  margin-top: 32px;
+  flex-direction: column;
+}
+
+.time1-latestJogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 8px;
+}
+
+.name-latestJogo {
+  font-family: Barlow Condensed;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.resultado-latestJogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Barlow Condensed;
+  font-weight: 900;
+  font-style: Black;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 28px;
+  letter-spacing: 0px;
+  color: #ffdf00;
+  gap: 2px;
+}
+
+.latestJogo {
+  display: flex;
+  align-items: center;
+  gap: 284.5px;
+  padding: 16px 16px 16px 16px;
+  border-bottom: solid 1px #ffffff14;
+}
+
+.latestJogos-dashboard {
+  border: solid 1px #ffffff14;
+  border-radius: 6px;
+}
