@@ -1,11 +1,10 @@
 import Dashboard from "./admin/pages/Dashboard";
-import Grupos from "./admin/pages/Grupos";
-import Times from "./admin/pages/Times";
+import NoticiasGerenciar from "./admin/pages/Noticias";
 
 function App() {
   return (
     <>
-      <Dashboard />
+      <NoticiasGerenciar />
     </>
   );
 }

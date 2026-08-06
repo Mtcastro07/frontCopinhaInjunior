@@ -12,7 +12,7 @@ export interface Grupo {
   dataUltimaAlteracao: string;
 }
 
-export default function Grupos() {
+export default function GruposGerenciar() {
   const [mostrar, setMostrar] = useState<boolean>(false);
 
   const [grupos, setGrupos] = useState<Grupo[]>([]);
