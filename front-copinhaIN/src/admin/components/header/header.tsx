@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./header.css";
 
 export default function HeaderAdmin() {
-  const [selecionado, setSelecionado] = useState<string>("dashboard");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [selecionado, setSelecionado] = useState<string>(
+    location.pathname === "/grupos" ? "grupos" : "dashboard"
+  );
   const IN = "{IN}";
   const COP = "COP";
   const HA = "HA";
@@ -76,7 +80,10 @@ export default function HeaderAdmin() {
             <div className="list-buttons-admin">
               <button
                 className={selecionado == "dashboard" ? "aberto" : "fechado"}
-                onClick={() => setSelecionado("dashboard")}
+                onClick={() => {
+                  setSelecionado("dashboard");
+                  navigate("/");
+                }}
               >
                 <div className="icon-nameButton-admin">
                   <svg
@@ -173,7 +180,10 @@ export default function HeaderAdmin() {
               </button>
 
               <button
-                onClick={() => setSelecionado("grupos")}
+                onClick={() => {
+                  setSelecionado("grupos");
+                  navigate("/grupos");
+                }}
                 className={selecionado == "grupos" ? "aberto" : "fechado"}
               >
                 <div className="icon-nameButton-admin">

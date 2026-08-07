@@ -1,11 +1,11 @@
-import Home from "./admin/pages/Home";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes";
 
 function App() {
   return (
-    <>
-      <Home />; oi
-      <p>oi</p>
-    </>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 
