@@ -124,3 +124,35 @@
   border-radius: 8px;
   margin-left: 50px;
 }
+
+.modal-content {
+  color: white;
+}
+
+.nome-cidade-estadio-modal-admin {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.input-modal-estadio {
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+  width: 450px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  outline: none;
+  padding: 5px 7px;
+}

@@ -23,6 +23,45 @@
   align-items: center;
 }
 
+.button-deletar-grupo-admin {
+  position: absolute;
+  left: 750px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.select-modal-grupo {
+  padding: 10px;
+}
+
+.grupo-modal-content {
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.input-nome-modal-grupo {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.first-times-modal {
+  display: flex;
+  gap: 50px;
+  margin-top: 20px;
+}
+.second-times-modal {
+  display: flex;
+  gap: 50px;
+  margin-top: 20px;
+}
+
 .button-add-grupo {
   display: flex;
   align-self: flex-end;
@@ -55,7 +94,13 @@
   margin-right: 200px;
 }
 
+.date-grupo-admin {
+  position: absolute;
+  left: 375px;
+}
+
 .grupo {
+  position: relative;
   color: white;
   display: flex;
   font-family: DM Mono;

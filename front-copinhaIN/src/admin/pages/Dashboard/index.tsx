@@ -11,30 +11,28 @@ import TrofeuIcon from "./icons/trofeuIcon";
 import type { Time } from "../Times";
 
 export interface Noticia {
-  id: number;
-  idGrupo: number;
-  autorId: number;
-  autor: string;
-  publicId: string;
+  id: string;
   titulo: string;
   textoAbertura: string;
-  corpoTexto: string;
+  textoCorpo: string;
   urlImagemCapa: string;
-  tempoLeitura: string;
-  dataPublicacao: string;
+  tempoLeitura: number;
+  autor: string;
+  grupo: string;
+  criadoEm: string;
+  atualizadoEm: string;
 }
 
 export interface Jogo {
   id: string;
-  idTime1: string;
-  idTime2: string;
-  idGrup: number;
-  publicId: number;
-  date: string;
-  local: string;
-  situacao: string;
-  dataCriacao: string;
-  dataUltimaAlteracao: string;
+  data: string;
+  status: string;
+  grupo: string;
+  timeA: string;
+  timeB: string;
+  estadio: string;
+  criadoEm: Date;
+  atualizadoEm: string;
 }
 
 export interface resultadoTime {
@@ -51,7 +49,7 @@ export interface resultadoPartida {
   nomeTimeB: string;
   placarTimeB: number;
   idPartida: string;
-  criadoEm: string;
+  criadoEm: Date;
 }
 
 export default function Dashboard() {
@@ -125,8 +123,7 @@ export default function Dashboard() {
       let noticias = response.data;
       let cincoNoticias = [...noticias].sort(
         (a: Noticia, b: Noticia) =>
-          new Date(b.dataPublicacao).getTime() -
-          new Date(a.dataPublicacao).getTime(),
+          new Date(b.criadoEm).getTime() - new Date(a.criadoEm).getTime(),
       );
       cincoNoticias = cincoNoticias.slice(0, 5);
       return setNoticia(cincoNoticias);
@@ -289,17 +286,17 @@ export default function Dashboard() {
                     (jogo) => jogo.id == resultado.idPartida,
                   );
                   const time1 = times.find(
-                    (time) => time.id == jogosFiltrados?.idTime1,
+                    (time) => time.id == jogosFiltrados?.timeA,
                   );
                   const time2 = times.find(
-                    (time) => time.id == jogosFiltrados?.idTime2,
+                    (time) => time.id == jogosFiltrados?.timeB,
                   );
 
                   return (
                     <div key={resultado.id} className="latestJogo">
                       <div className="time1-latestJogo">
-                        <p>{time1?.urlImagemEscudo}</p>
-                        <p className="name-latestJogo">{time1?.sigla}</p>
+                        <p>{time1?.escudoUrl}</p>
+                        <p className="name-latestJogo">{time1?.abreviacao}</p>
                       </div>
                       <div className="resultado-latestJogo">
                         <p className="resultado-jogoLatest">
@@ -311,8 +308,8 @@ export default function Dashboard() {
                         </p>
                       </div>
                       <div className="time1-latestJogo">
-                        <p>{time2?.urlImagemEscudo}</p>
-                        <p className="name-latestJogo">{time2?.sigla}</p>
+                        <p>{time2?.escudoUrl}</p>
+                        <p className="name-latestJogo">{time2?.abreviacao}</p>
                       </div>
                     </div>
                   );
