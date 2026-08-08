@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+body {
+    background-color: #120846;
+}
+.title {
+    background-color: #002776;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    p {
+    color: white;
+    font-family: Barlow;
+}
+}
+
+span {
+  color: yellow;
+}
+h1 {
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
+        color: white;
+        font-family: Barlow Condensed;
+        font-weight: 900;
+        font-style: Black;
+        font-size: 64px;
+}
+
+.last_result {
+    width: 400px;
+    font-family: Barlow;
+    height: 300px;
+    background-color: #120846;
+}
+
+.last_result h2 {
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+}
+
+.last_result span {
+    text-align: center;
+
+}
+
+.result_card {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-left: 57px;
+    font-size: 24px;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+    color: white;
+    font-family: Barlow;
+
+    span {
+        font-size: 48px;
+    }
+}
+
+.homepage {
+    background-color: #120846;
+}
+
+.lista_noticias {
+    font-family: Barlow;
+    color: white;
+    .last_news {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 50px;
+        padding: 20px;
+    }
+}
+
+.grid_noticias {
+    margin-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+ 
+.card_noticia {
+  
+display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  overflow: hidden;
+  gap: 20px;
+}
+ 
+.card_noticia h3  {
+    background-color: #304773;
+    width: 525px;
+    margin-left: 20px;
+}
+
+.card_noticia p {
+    background-color: #304773;
+    width: 525px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+}
+.card-noticia img {
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
