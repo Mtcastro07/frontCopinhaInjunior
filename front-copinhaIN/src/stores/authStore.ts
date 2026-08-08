@@ -6,7 +6,6 @@ interface Usuario {
   nome: string;
   email: string;
 }
- 
 
 interface AuthState {
   token: string | null;
@@ -14,23 +13,19 @@ interface AuthState {
   login: (token: string, usuario: Usuario) => void;
   logout: () => void;
 }
- 
-
- 
 
 export const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
       token: null,
       usuario: null,
- 
+
       login: (token, usuario) => set({ token, usuario }),
- 
+
       logout: () => set({ token: null, usuario: null }),
     }),
     {
-      name: "copinha-auth", // chave usada no localStorage
-    }
-  )
+      name: "copinha-auth",
+    },
+  ),
 );
- 

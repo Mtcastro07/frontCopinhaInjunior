@@ -22,7 +22,7 @@ function App() {
           <Route path="/EstadiosAdmin" element={<EstadiosAdmin />} />
           <Route path="/JogosAdmin" element={<JogosAdmin />} />
           <Route path="/Grupos" element={<Grupos />} />
-          <Route path="/" element={<Homepage />}
+          <Route path="/" element={<Homepage />} />
         </Routes>
       </BrowserRouter>
     </>

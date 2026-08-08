@@ -6,6 +6,7 @@ import type { Time } from "../Times";
 import type { resultadoPartida } from "../Dashboard";
 import { ApagarIcone, EditarIcone } from "../Noticias/icones";
 import axios from "axios";
+import { api } from "../../../services/api";
 import FecharModalIcone from "./icones";
 import type { Grupo } from "../GruposAdmin/index";
 import type { Estadio } from "../Estadios";
@@ -50,7 +51,7 @@ export function JogosAdmin() {
 
   useEffect(() => {
     async function carregarGrupos() {
-      const response = await axios.get("urlGrupos");
+      const response = await api.get("urlGrupos");
       return setGrupos(response.data);
     }
     carregarGrupos();
@@ -77,7 +78,7 @@ export function JogosAdmin() {
 
   useEffect(() => {
     async function carregarEstadios() {
-      const response = await axios.get("urlEstadios");
+      const response = await api.get("urlEstadios");
       return setEstadios(response.data);
     }
     carregarEstadios();
@@ -85,7 +86,7 @@ export function JogosAdmin() {
 
   useEffect(() => {
     async function carregarResultado() {
-      const response = await axios.get("urlResultado");
+      const response = await api.get("urlResultado");
       return setResultado(response.data);
     }
     carregarResultado();
@@ -93,7 +94,7 @@ export function JogosAdmin() {
 
   useEffect(() => {
     async function carregarTimes() {
-      const response = await axios.get("urlTimes");
+      const response = await api.get("urlTimes");
       return setTimes(response.data);
     }
     carregarTimes();
@@ -101,36 +102,36 @@ export function JogosAdmin() {
 
   useEffect(() => {
     async function carregarJogos() {
-      const response = await axios.get("urlJogos");
+      const response = await api.get("urlJogos");
       return setJogos(response.data);
     }
     carregarJogos();
   }, []);
 
   async function deletarJogo(id: string) {
-    await axios.delete(`/admin/matches-results/${id}`);
+    await api.delete(`/admin/matches-results/${id}`);
     setJogos((prevJogos) => prevJogos.filter((jogo) => jogo.id !== id));
   }
   async function salvarJogoEditar() {
-    const response = await axios.get("urlJogos");
+    const response = await api.get("urlJogos");
     setJogos(response.data);
     setEditarJogo(false);
     setJogoEditando(null);
   }
 
   async function salvarJogoCriar() {
-    const response = await axios.get("urlJogos");
+    const response = await api.get("urlJogos");
     setJogos(response.data);
     setCriarJogo(false);
   }
 
   async function handleEditar(id: string) {
-    await axios.put(`urlJogos/${id}`, dadosFormEditar);
+    await api.put(`urlJogos/${id}`, dadosFormEditar);
     salvarJogoEditar();
   }
 
   async function handleCriar() {
-    await axios.post(`/admin/matches-results`, dadosFormCriar);
+    await api.post(`/admin/matches-results`, dadosFormCriar);
     salvarJogoCriar();
   }
 

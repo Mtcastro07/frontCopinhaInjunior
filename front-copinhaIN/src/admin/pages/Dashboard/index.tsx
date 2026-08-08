@@ -9,6 +9,7 @@ import EstadioIcon from "./icons/estadioIcon";
 import axios from "axios";
 import TrofeuIcon from "./icons/trofeuIcon";
 import type { Time } from "../Times";
+import { api } from "../../../services/api";
 
 export interface Noticia {
   id: string;
@@ -72,7 +73,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function carregarResultados() {
-      const response = await axios.get("urlResultados");
+      const response = await api.get("urlResultados");
       let resultados = response.data;
       let latestResultado = resultados.slice(0, 5);
       latestResultado = resultados.sort(
@@ -86,7 +87,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function carregarJogos() {
-      const response = await axios.get("urlJogos");
+      const response = await api.get("urlJogos");
       return setJogos(response.data);
     }
     carregarJogos();
@@ -94,7 +95,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function carregarTimes() {
-      const response = await axios.get("urlTimes");
+      const response = await api.get("urlTimes");
       return setTimes(response.data);
     }
     carregarTimes();
@@ -102,7 +103,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function filtrarJogosAgendados() {
-      const response = await axios.get("urlJogos");
+      const response = await api.get("urlJogos");
       return response.data;
     }
 
@@ -119,7 +120,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function carregarNoticias() {
-      const response = await axios.get("urlNoticias");
+      const response = await api.get("urlNoticias");
       let noticias = response.data;
       let cincoNoticias = [...noticias].sort(
         (a: Noticia, b: Noticia) =>

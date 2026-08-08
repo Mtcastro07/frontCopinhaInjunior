@@ -4,6 +4,7 @@ import { ApagarIcone, EditarIcone } from "../Noticias/icones";
 import "./estadio.css";
 import axios from "axios";
 import FecharModalIcone from "../Jogos/icones";
+import { api } from "../../../services/api";
 
 export interface Estadio {
   id: string;
@@ -52,32 +53,32 @@ export default function EstadiosAdmin() {
 
   useEffect(() => {
     async function carregarEstadios() {
-      const response = await axios.get("urlEstadios");
+      const response = await api.get("urlEstadios");
       return setEstadios(response.data);
     }
     carregarEstadios();
   }, []);
 
   async function deletarEstadio(publicId: string) {
-    await axios.delete(`/admin/stadiums/${publicId}`);
+    await api.delete(`/admin/stadiums/${publicId}`);
     let novosEstadios = estadios.filter((estadio) => estadio.id != publicId);
     setEstadios(novosEstadios);
   }
 
   async function handleCriar() {
-    await axios.post("/admin/stadiums", dadosFormCriarEstadio);
-    const response = await axios.get("urlEstadios");
+    await api.post("/admin/stadiums", dadosFormCriarEstadio);
+    const response = await api.get("urlEstadios");
     setEstadios(response.data);
     setMostrarEstadioCriar(false);
   }
 
   async function handleEditar() {
     if (!estadioEditando) return;
-    await axios.put(
+    await api.put(
       `/admin/stadiums/${estadioEditando.id}`,
       dadosFormEditarEstadio,
     );
-    const response = await axios.get("urlEstadios");
+    const response = await api.get("urlEstadios");
     setEstadios(response.data);
     setMostrarEstadioEditar(false);
     setEstadioEditando(null);

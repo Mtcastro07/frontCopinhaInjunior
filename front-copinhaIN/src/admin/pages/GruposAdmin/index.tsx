@@ -5,6 +5,7 @@ import { LixoIcon } from "./icones";
 import axios from "axios";
 import FecharModalIcone from "../Jogos/icones";
 import type { Time } from "../Times";
+import { api } from "../../../services/api";
 
 export interface Grupo {
   id: string;
@@ -37,7 +38,7 @@ export default function GruposGerenciar() {
 
   useEffect(() => {
     async function carregarTimes() {
-      const response = await axios.get("urlTimes");
+      const response = await api.get("urlTimes");
       return setTimes(response.data);
     }
     carregarTimes();
@@ -45,7 +46,7 @@ export default function GruposGerenciar() {
 
   useEffect(() => {
     async function carregarGrupos() {
-      const response = await axios.get("urlGrupos");
+      const response = await api.get("urlGrupos");
       return setGrupos(response.data);
     }
     carregarGrupos();
@@ -70,20 +71,20 @@ export default function GruposGerenciar() {
   }
 
   async function handleCriar() {
-    await axios.post("/admin/groups", dadosFormCriar);
-    const response = await axios.get("urlGrupos");
+    await api.post("/admin/groups", dadosFormCriar);
+    const response = await api.get("urlGrupos");
     setGrupos(response.data);
     fecharModal();
   }
 
   async function handleAlterarTimes() {
-    await axios.patch(`/admin/groups/${dadosFormCriar.id}`, {
+    await api.patch(`/admin/groups/${dadosFormCriar.id}`, {
       timeUm: dadosFormCriar.timeUm,
       timeDois: dadosFormCriar.timeDois,
       timeTres: dadosFormCriar.timeTres,
       timeQuatro: dadosFormCriar.timeQuatro,
     });
-    const response = await axios.get("urlGrupos");
+    const response = await api.get("urlGrupos");
     setGrupos(response.data);
     fecharModal();
   }
@@ -97,8 +98,8 @@ export default function GruposGerenciar() {
   }
 
   async function handleApagar(id: string) {
-    await axios.delete(`/admin/groups/${id}`);
-    const response = await axios.get("urlGrupos");
+    await api.delete(`/admin/groups/${id}`);
+    const response = await api.get("urlGrupos");
     setGrupos(response.data);
   }
 

@@ -5,6 +5,7 @@ import { EditarIcone } from "./icones";
 import { ApagarIcone } from "./icones";
 import type { Noticia } from "../Dashboard";
 import axios from "axios";
+import { api } from "../../../services/api";
 import FecharModalIcone from "../Jogos/icones";
 
 export default function NoticiasGerenciar() {
@@ -61,7 +62,7 @@ export default function NoticiasGerenciar() {
 
   useEffect(() => {
     const timer = setTimeout(async () => {
-      const response = await axios.get(`urlNoticias?titulo=${termoBusca}`);
+      const response = await api.get(`urlNoticias?titulo=${termoBusca}`);
       setNoticias(response.data);
     }, 500);
 
@@ -70,14 +71,14 @@ export default function NoticiasGerenciar() {
 
   useEffect(() => {
     async function carregarNoticias() {
-      const response = await axios.get("urlNoticias");
+      const response = await api.get("urlNoticias");
       return setNoticias(response.data);
     }
     carregarNoticias();
   }, []);
 
   async function deletarUser(publicId: string) {
-    await axios.delete(`/admin/news/${publicId}`);
+    await api.delete(`/admin/news/${publicId}`);
     let noticiasAtualizadas = noticias.filter(
       (noticiaDesejada) => noticiaDesejada.id != publicId,
     );
@@ -88,7 +89,7 @@ export default function NoticiasGerenciar() {
     const formData = new FormData();
     formData.append("urlImagemCapa", arquivo);
 
-    const response = await axios.post("/admin/news", formData, {
+    const response = await api.post("/admin/news", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
     return response.data.urlImagemCapa;
@@ -101,11 +102,11 @@ export default function NoticiasGerenciar() {
       urlFoto = await handleUpload(arquivoEditar);
     }
 
-    await axios.put(`/admin/news/${editandoNoticia?.id}`, {
+    await api.put(`/admin/news/${editandoNoticia?.id}`, {
       ...dadosFormEdit,
       urlImagemCapa: urlFoto,
     });
-    const response = await axios.get("urlNoticias");
+    const response = await api.get("urlNoticias");
     setNoticias(response.data);
     setEditandoNoticia(null);
     setMostrarEdicaoNoticias(!mostrarEdicaolNoticias);
@@ -118,11 +119,11 @@ export default function NoticiasGerenciar() {
       urlFoto = await handleUpload(arquivoCriar);
     }
 
-    await axios.post(`/admin/news`, {
+    await api.post(`/admin/news`, {
       ...dadosFormCriar,
       urlImagemCapa: urlFoto,
     });
-    const response = await axios.get(`urlNoticias`);
+    const response = await api.get(`urlNoticias`);
     setNoticias(response.data);
     setMostrarCriarNoticia(!mostrarCrirNoticia);
     setArquivoCriar(null);
