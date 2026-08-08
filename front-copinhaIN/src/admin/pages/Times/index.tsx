@@ -6,7 +6,7 @@ import { EditarIcon } from "./icones";
 import axios from "axios";
 import { EditarIcone } from "../Noticias/icones";
 import FecharModalIcone from "../Jogos/icones";
-import type { Grupo } from "../Grupos";
+import type { Grupo } from "../GruposAdmin/index";
 
 export interface Time {
   id: string;

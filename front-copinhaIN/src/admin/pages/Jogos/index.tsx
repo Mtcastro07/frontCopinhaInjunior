@@ -7,7 +7,7 @@ import type { resultadoPartida } from "../Dashboard";
 import { ApagarIcone, EditarIcone } from "../Noticias/icones";
 import axios from "axios";
 import FecharModalIcone from "./icones";
-import type { Grupo } from "../Grupos";
+import type { Grupo } from "../GruposAdmin/index";
 import type { Estadio } from "../Estadios";
 
 export interface dadosFormJogo {

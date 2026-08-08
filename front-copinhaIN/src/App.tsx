@@ -1,12 +1,8 @@
 import { BrowserRouter } from "react-router-dom";
-import AppRoutes from "./routes";
+import Login from "./user/login";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
-  );
+  return <Login />;
 }
 
 export default App;
