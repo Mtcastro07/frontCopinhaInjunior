@@ -7,15 +7,19 @@ interface ResultadoRecenteProps {
   erro: string | null;
 }
 
+// A API de resultado de partida ainda não retorna bandeira/escudo do time,
+// então usamos as iniciais do nome como identificação visual provisória.
+function iniciais(nomeTime: string): string {
+  return nomeTime.slice(0, 3).toUpperCase();
+}
+
 export default function ResultadoRecente({
   resultado,
   carregando,
   erro,
 }: ResultadoRecenteProps) {
   return (
-    <section className="resultado-recente-container">
-      <h2 className="resultado-recente-titulo">Resultado mais recente</h2>
-
+    <div className="resultado-recente-card">
       {carregando && (
         <p className="resultado-recente-estado">Carregando resultado...</p>
       )}
@@ -33,33 +37,36 @@ export default function ResultadoRecente({
       )}
 
       {!carregando && !erro && resultado && (
-        <div className="resultado-recente-card">
-          {resultado.grupo && (
-            <p className="resultado-recente-grupo">{resultado.grupo}</p>
-          )}
+        <>
+          <p className="resultado-recente-label">
+            Último resultado{resultado.grupo ? ` — ${resultado.grupo}` : ""}
+          </p>
+
           <div className="resultado-recente-placar">
             <div className="resultado-recente-time">
-              <p className="resultado-recente-time-nome">
-                {resultado.nomeTimeA}
-              </p>
-              <p className="resultado-recente-time-placar">
-                {resultado.placarTimeA}
-              </p>
+              <span className="resultado-recente-escudo">
+                {iniciais(resultado.nomeTimeA)}
+              </span>
+              <span className="resultado-recente-sigla">
+                {iniciais(resultado.nomeTimeA)}
+              </span>
             </div>
 
-            <p className="resultado-recente-versus">x</p>
+            <p className="resultado-recente-placar-numeros">
+              {resultado.placarTimeA} x {resultado.placarTimeB}
+            </p>
 
             <div className="resultado-recente-time">
-              <p className="resultado-recente-time-placar">
-                {resultado.placarTimeB}
-              </p>
-              <p className="resultado-recente-time-nome">
-                {resultado.nomeTimeB}
-              </p>
+              <span className="resultado-recente-escudo">
+                {iniciais(resultado.nomeTimeB)}
+              </span>
+              <span className="resultado-recente-sigla">
+                {iniciais(resultado.nomeTimeB)}
+              </span>
             </div>
           </div>
-        </div>
+        </>
       )}
-    </section>
+    </div>
   );
 }

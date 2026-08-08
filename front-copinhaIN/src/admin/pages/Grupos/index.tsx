@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import HeaderAdmin from "../../components/header/header";
+import Navbar from "../../../components/navbar/navbar";
+import Footer from "../../../components/footer/footer";
 import ResultadoRecente from "../../components/resultadoRecente/resultadoRecente";
 import ClassificacaoGrupo from "../../components/classificacaoGrupo/classificacaoGrupo";
 import { listarGrupos, listarTimesDoGrupo } from "../../../services/grupoService";
@@ -68,43 +69,79 @@ export default function Grupos() {
   }, []);
 
   return (
-    <>
-      <HeaderAdmin />
+    <div className="grupos-page">
+      <Navbar />
 
-      <main className="grupos-container">
-        <h1 className="grupos-titulo">Grupos</h1>
-
-        <ResultadoRecente
-          resultado={resultadoRecente}
-          carregando={carregandoResultado}
-          erro={erroResultado}
-        />
-
-        <section className="grupos-classificacao-container">
-          <h2 className="grupos-classificacao-titulo">Classificação por grupo</h2>
-
-          {erroGrupos && (
-            <p className="grupos-estado">
-              Não foi possível carregar os grupos.
+      <section className="grupos-hero">
+        <div className="grupos-hero-container">
+          <div className="grupos-hero-texto">
+            <p className="grupos-hero-breadcrumb">
+              <span className="grupos-hero-breadcrumb-marcador" />
+              Copa do Mundo 2026 — Fase de Grupos
             </p>
-          )}
-
-          {!erroGrupos && !carregandoGrupos && grupos.length === 0 && (
-            <p className="grupos-estado">Nenhum grupo cadastrado ainda.</p>
-          )}
-
-          <div className="grupos-classificacao-lista">
-            {(carregandoGrupos ? [] : grupos).map((grupo) => (
-              <ClassificacaoGrupo
-                key={grupo.id}
-                grupo={grupo}
-                times={timesPorGrupo[grupo.id] ?? []}
-                carregando={carregandoGrupos}
-              />
-            ))}
+            <h1 className="grupos-hero-titulo">
+              COP<span className="grupos-hero-titulo-highlight">{"{IN}"}</span>
+              HA
+            </h1>
+            <p className="grupos-hero-subtitulo">
+              Notícias, placar e tabela da Copa do Mundo em um só lugar
+            </p>
           </div>
-        </section>
+
+          <ResultadoRecente
+            resultado={resultadoRecente}
+            carregando={carregandoResultado}
+            erro={erroResultado}
+          />
+        </div>
+      </section>
+
+      <main className="grupos-main">
+        <div className="grupos-classificacao-header">
+          <h2 className="grupos-classificacao-titulo">
+            Classificação dos grupos
+          </h2>
+          <span className="grupos-classificacao-linha" />
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6 3.333 10.667 8 6 12.667"
+              stroke="var(--copinha-yellow)"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+
+        {erroGrupos && (
+          <p className="grupos-estado">
+            Não foi possível carregar os grupos.
+          </p>
+        )}
+
+        {!erroGrupos && !carregandoGrupos && grupos.length === 0 && (
+          <p className="grupos-estado">Nenhum grupo cadastrado ainda.</p>
+        )}
+
+        <div className="grupos-classificacao-lista">
+          {(carregandoGrupos ? [] : grupos).map((grupo) => (
+            <ClassificacaoGrupo
+              key={grupo.id}
+              grupo={grupo}
+              times={timesPorGrupo[grupo.id] ?? []}
+              carregando={carregandoGrupos}
+            />
+          ))}
+        </div>
       </main>
-    </>
+
+      <Footer />
+    </div>
   );
 }

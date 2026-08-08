@@ -1,0 +1,71 @@
+.resultado-recente-card {
+  background-color: var(--copinha-bg-elevated);
+  border-radius: 10px;
+  padding: 16px 20px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.resultado-recente-estado {
+  font-family: "Barlow", sans-serif;
+  font-size: 13px;
+  color: var(--copinha-text-secondary);
+  text-align: center;
+}
+
+.resultado-recente-label {
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--copinha-yellow);
+  text-align: center;
+}
+
+.resultado-recente-placar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.resultado-recente-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.resultado-recente-escudo {
+  width: 28px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: var(--copinha-blue-dark);
+  border: 1px solid var(--copinha-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--copinha-white);
+}
+
+.resultado-recente-sigla {
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  color: var(--copinha-white);
+}
+
+.resultado-recente-placar-numeros {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--copinha-yellow);
+  line-height: 1;
+}

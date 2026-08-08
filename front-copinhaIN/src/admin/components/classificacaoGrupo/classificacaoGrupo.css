@@ -1,0 +1,157 @@
+.classificacao-grupo-card {
+  background-color: var(--copinha-bg-card);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.classificacao-grupo-header {
+  background-color: var(--copinha-blue-dark);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.classificacao-grupo-titulo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.6px;
+  color: var(--copinha-white);
+}
+
+.classificacao-grupo-estado {
+  padding: 20px;
+  font-family: "Barlow", sans-serif;
+  font-size: 13px;
+  color: var(--copinha-text-secondary);
+}
+
+.classificacao-grupo-tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.classificacao-grupo-tabela th {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--copinha-text-secondary);
+  text-align: center;
+  padding: 10px 8px;
+}
+
+.classificacao-grupo-tabela th.coluna-posicao {
+  text-align: center;
+  width: 32px;
+}
+
+.classificacao-grupo-tabela th.coluna-selecao {
+  text-align: left;
+}
+
+.classificacao-grupo-tabela td {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--copinha-white);
+  text-align: center;
+  padding: 10px 8px;
+  border-top: 1px solid var(--copinha-border);
+}
+
+.classificacao-grupo-tabela tr:first-child td {
+  border-top: none;
+}
+
+.classificacao-grupo-tabela td.coluna-posicao {
+  color: var(--copinha-text-secondary);
+  font-family: "DM Mono", monospace;
+}
+
+.classificacao-grupo-tabela td.coluna-selecao {
+  text-align: left;
+}
+
+.classificacao-grupo-tabela td.coluna-pontos {
+  font-weight: 700;
+  color: var(--copinha-white);
+}
+
+.classificacao-grupo-time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.classificacao-grupo-escudo {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  object-fit: cover;
+  background-color: var(--copinha-blue-dark);
+}
+
+.classificacao-grupo-nomes {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.classificacao-grupo-nome {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--copinha-white);
+}
+
+.classificacao-grupo-abreviacao {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  color: var(--copinha-text-secondary);
+}
+
+.saldo-positivo {
+  color: var(--copinha-green);
+}
+
+.saldo-negativo {
+  color: var(--copinha-danger);
+}
+
+.linha-classificada td {
+  position: relative;
+}
+
+.linha-classificada td.coluna-posicao::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--copinha-green);
+}
+
+.linha-classificada:last-of-type td {
+  border-bottom: 1px solid var(--copinha-green);
+}
+
+.classificacao-grupo-legenda {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-family: "Barlow", sans-serif;
+  font-size: 11px;
+  color: var(--copinha-text-secondary);
+}
+
+.classificacao-grupo-legenda-marcador {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background-color: var(--copinha-green);
+  flex-shrink: 0;
+}
