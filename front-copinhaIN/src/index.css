@@ -1,4 +1,34 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--copinha-bg);
+  color: var(--copinha-white);
+  font-family: "Barlow", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --copinha-blue: #002776;
+  --copinha-blue-dark: #0a2556;
+  --copinha-green: #009c3b;
+  --copinha-yellow: #ffdf00;
+  --copinha-danger: #e85555;
+
+  --copinha-bg: #0d1b2a;
+  --copinha-bg-elevated: #0f2343;
+  --copinha-bg-card: #132236;
+
+  --copinha-white: #ffffff;
+  --copinha-text-secondary: #94a3b8;
+  --copinha-border: #ffffff26;
 }

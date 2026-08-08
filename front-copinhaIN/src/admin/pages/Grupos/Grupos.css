@@ -1,0 +1,130 @@
+.grupos-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--copinha-bg);
+}
+
+/* ---------- Hero ---------- */
+
+.grupos-hero {
+  background-color: var(--copinha-blue);
+}
+
+.grupos-hero-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 24px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.grupos-hero-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 620px;
+}
+
+.grupos-hero-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--copinha-yellow);
+}
+
+.grupos-hero-breadcrumb-marcador {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: var(--copinha-yellow);
+  flex-shrink: 0;
+}
+
+.grupos-hero-titulo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 0.95;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--copinha-white);
+}
+
+.grupos-hero-titulo-highlight {
+  color: var(--copinha-yellow);
+}
+
+.grupos-hero-subtitulo {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--copinha-text-secondary);
+}
+
+/* ---------- Conteúdo principal ---------- */
+
+.grupos-main {
+  flex: 1;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.grupos-classificacao-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.grupos-classificacao-titulo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--copinha-white);
+  white-space: nowrap;
+}
+
+.grupos-classificacao-linha {
+  flex: 1;
+  height: 1px;
+  background-color: var(--copinha-border);
+}
+
+.grupos-estado {
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  color: var(--copinha-text-secondary);
+  padding: 16px 0;
+}
+
+.grupos-classificacao-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 768px) {
+  .grupos-hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 20px 36px;
+  }
+
+  .grupos-main {
+    padding: 28px 20px 48px;
+  }
+}
