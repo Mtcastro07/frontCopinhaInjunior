@@ -3,7 +3,10 @@ import Navbar from "../../../components/navbar/navbar";
 import Footer from "../../../components/footer/footer";
 import ResultadoRecente from "../../components/resultadoRecente/resultadoRecente";
 import ClassificacaoGrupo from "../../components/classificacaoGrupo/classificacaoGrupo";
-import { listarGrupos, listarTimesDoGrupo } from "../../../services/grupoService";
+import {
+  listarGrupos,
+  listarTimesDoGrupo,
+} from "../../../services/grupoService";
 import { buscarResultadoMaisRecente } from "../../../services/resultadoPartidaService";
 import type { Grupo } from "../../../types/grupo";
 import type { Time } from "../../../types/time";
@@ -13,7 +16,7 @@ import "./Grupos.css";
 export default function Grupos() {
   const [grupos, setGrupos] = useState<Grupo[]>([]);
   const [timesPorGrupo, setTimesPorGrupo] = useState<Record<string, Time[]>>(
-    {}
+    {},
   );
   const [carregandoGrupos, setCarregandoGrupos] = useState(true);
   const [erroGrupos, setErroGrupos] = useState<string | null>(null);
@@ -48,7 +51,7 @@ export default function Grupos() {
         setGrupos(listaGrupos);
 
         const timesDeCadaGrupo = await Promise.all(
-          listaGrupos.map((grupo) => listarTimesDoGrupo(grupo.id))
+          listaGrupos.map((grupo) => listarTimesDoGrupo(grupo.id)),
         );
 
         const mapaTimesPorGrupo: Record<string, Time[]> = {};
@@ -120,9 +123,7 @@ export default function Grupos() {
         </div>
 
         {erroGrupos && (
-          <p className="grupos-estado">
-            Não foi possível carregar os grupos.
-          </p>
+          <p className="grupos-estado">Não foi possível carregar os grupos.</p>
         )}
 
         {!erroGrupos && !carregandoGrupos && grupos.length === 0 && (

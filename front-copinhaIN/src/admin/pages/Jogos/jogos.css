@@ -1,0 +1,278 @@
+.button-jogos-admin {
+  width: 1666px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  align-self: flex-end;
+}
+
+.addjogo-button {
+  font-family: Barlow;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+  padding: 8px 16px 8px 16px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: #009c3b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 32px;
+}
+
+.titulo-jogos-admin {
+  display: flex;
+  position: relative;
+  padding: 12px 16px 13px 12px;
+  font-family: DM Mono;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  color: #8ba3bc;
+  line-height: 16px;
+  letter-spacing: 0px;
+  border-bottom: solid 1px #ffffff0a;
+}
+
+.placar-jogos-admin {
+  position: absolute;
+  left: 403px;
+}
+
+.estadio-jogos-admin {
+  position: absolute;
+  left: 689px;
+}
+
+.jogos-container-admin {
+  margin-left: 30px;
+  width: 900px;
+  background-color: #132236;
+  border-radius: 8px;
+}
+
+.infos-times-jogo-admin {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jogo-admin {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 12px 16px 13px 12px;
+  border-top: solid 1px #ffffff0a;
+}
+
+.placar-jogo-admin {
+  display: flex;
+  font-family: Barlow Condensed;
+  font-weight: 900;
+  font-style: Black;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffdf00;
+  gap: 3px;
+}
+
+.resultado-jogo-admin {
+  display: flex;
+  font-family: DM Mono;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  color: #8ba3bc;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.placar-resultado-jogo-admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  left: 384px;
+}
+
+.grupo-jogo-admin {
+  font-family: DM Mono;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: #8ba3bc;
+  padding-top: 2px;
+  padding-right: 6px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  border-radius: 4px;
+  background-color: #0027764d;
+}
+
+.jogo-admin-versus {
+  font-family: DM Mono;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  leading-trim: NONE;
+  line-height: 16px;
+  letter-spacing: 0px;
+
+  color: #8ba3bc;
+}
+
+.jogo-nome-time-admin {
+  font-family: Barlow Condensed;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: white;
+}
+
+.estadio-jogo-admin {
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #8ba3bc;
+  position: absolute;
+  left: 649px;
+}
+.buttons-jogo-admin {
+  display: flex;
+  gap: 14px;
+  position: absolute;
+  right: 16px;
+}
+
+.editar-button-admin,
+.deletar-jogo-admin {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.jogos-admin-main {
+  background-color: #0d1b2a;
+  height: 100vh;
+}
+
+.selecionar-times-modal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #ffffff;
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.selecionar-time1-admin,
+.selecionar-time2-admin,
+.selecionar-estadio-admin,
+.selecionar-grupo-admin {
+  padding: 8px;
+  padding-right: 50px;
+  color: #000000;
+  background-color: white;
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+}
+
+.selecionar-grupo-admin {
+  margin-bottom: 10px;
+}
+
+.selecionar-time1-admin option,
+.selecionar-time2-admin option,
+.selecionar-grupo-admin option,
+.selecionar-estadio-admin option {
+  color: #000000;
+  background-color: white;
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+.selecionar-gols-admin {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-modal-gol,
+.input-modal-date {
+  color: #000000;
+  background-color: white;
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 10px;
+}
+
+.input-modal-gol::-webkit-inner-spin-button,
+.input-modal-gol::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-modal-gol[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input-modal-date {
+  padding: 8px 35px;
+}
+
+.estadio-date-input-modal {
+  display: flex;
+  justify-content: space-between;
+}
