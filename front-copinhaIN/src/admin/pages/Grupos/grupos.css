@@ -1,126 +1,130 @@
-.grupos-main-page {
-  background-color: #0f172a;
-  height: 100vw;
+.grupos-page {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--copinha-bg);
 }
 
-.addgroup-button {
-  font-family: Barlow;
-  font-weight: 600;
-  font-style: SemiBold;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0px;
-  text-align: center;
-  padding: 8px 16px 8px 16px;
-  border-radius: 4px;
-  border: none;
-  color: white;
-  background-color: #009c3b;
-  cursor: pointer;
+/* ---------- Hero ---------- */
+
+.grupos-hero {
+  background-color: var(--copinha-blue);
+}
+
+.grupos-hero-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 24px 48px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 32px;
 }
 
-.button-deletar-grupo-admin {
-  position: absolute;
-  left: 750px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.select-modal-grupo {
-  padding: 10px;
-}
-
-.grupo-modal-content {
-  font-family: Barlow;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 14px;
-  leading-trim: NONE;
-  line-height: 20px;
-  letter-spacing: 0px;
-}
-
-.input-nome-modal-grupo {
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.first-times-modal {
-  display: flex;
-  gap: 50px;
-  margin-top: 20px;
-}
-.second-times-modal {
-  display: flex;
-  gap: 50px;
-  margin-top: 20px;
-}
-
-.button-add-grupo {
-  display: flex;
-  align-self: flex-end;
-  margin-right: 300px;
-  margin-bottom: 32px;
-  margin-top: 20px;
-}
-
-.grupo-infos {
-  color: white;
-  display: flex;
-  font-family: DM Mono;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0px;
-  gap: 308px;
-  padding: 12px 0px 13px 16px;
-  border-bottom: solid #ffffff14 1px;
-}
-.grupo-container {
+.grupos-hero-texto {
   display: flex;
   flex-direction: column;
-  width: 790px;
-  min-height: 41px;
-  border: solid #ffffff14 1px;
-  border-radius: 6px;
-  align-self: center;
-  margin-right: 200px;
+  gap: 14px;
+  max-width: 620px;
 }
 
-.date-grupo-admin {
-  position: absolute;
-  left: 375px;
-}
-
-.grupo {
-  position: relative;
-  color: white;
-  display: flex;
-  font-family: DM Mono;
-  font-weight: 500;
-  font-style: Medium;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0px;
-  gap: 238px;
-  padding: 12px 0px 13px 16px;
+.grupos-hero-breadcrumb {
   display: flex;
   align-items: center;
-  border-bottom: solid #ffffff14 1px;
-}
-
-.title-grupo {
-  font-family: Inter;
+  gap: 8px;
+  font-family: "Barlow", sans-serif;
   font-weight: 700;
-  font-style: Bold;
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: 0px;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--copinha-yellow);
+}
+
+.grupos-hero-breadcrumb-marcador {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: var(--copinha-yellow);
+  flex-shrink: 0;
+}
+
+.grupos-hero-titulo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 0.95;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--copinha-white);
+}
+
+.grupos-hero-titulo-highlight {
+  color: var(--copinha-yellow);
+}
+
+.grupos-hero-subtitulo {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--copinha-text-secondary);
+}
+
+/* ---------- Conteúdo principal ---------- */
+
+.grupos-main {
+  flex: 1;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.grupos-classificacao-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.grupos-classificacao-titulo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--copinha-white);
+  white-space: nowrap;
+}
+
+.grupos-classificacao-linha {
+  flex: 1;
+  height: 1px;
+  background-color: var(--copinha-border);
+}
+
+.grupos-estado {
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  color: var(--copinha-text-secondary);
+  padding: 16px 0;
+}
+
+.grupos-classificacao-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 768px) {
+  .grupos-hero-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 20px 36px;
+  }
+
+  .grupos-main {
+    padding: 28px 20px 48px;
+  }
 }
