@@ -174,27 +174,9 @@ export default function Dashboard() {
                 </p>
               </div>
             </div>
-            <div className="latestNews-dashboard">
-              <div className="latestNews-header">
-                <NoticiaIcon />
-                <p className="latestNews-title-header">ÚLTIMAS NOTÍCIAS</p>
-              </div>
-              <div className="latestNews-card">
-                <img
-                  className="latestNews-authorImage"
-                  src="imagem"
-                  alt="imagem"
-                ></img>
-                <div className="latestNews-textcontent">
-                  <h5 className="title-latestNew">Coisas</h5>
-                  <div className="subtitle-latestNews">
-                    <p className="author-latestNews">Gustavo</p>{" "}
-                    <p className="span-latestNews">· 1 min de leitura</p>
-                  </div>
-                </div>
-              </div>
 
-              {/* <div className="latestNews-card">
+            <div className="latestNews-section">
+              <div className="latestNews-card">
                 <img
                   className="latestNews-authorImage"
                   src={noticia?.[0].urlImagemCapa}
@@ -273,7 +255,7 @@ export default function Dashboard() {
                     </p>
                   </div>
                 </div>
-              </div> */}
+              </div>
             </div>
             <div className="latestJogos-dashboard">
               <div className="latestJogos-header">

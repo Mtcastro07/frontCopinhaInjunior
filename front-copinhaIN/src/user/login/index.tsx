@@ -1,4 +1,7 @@
 import { LoginIcon } from "./icones";
+import { useState } from "react";
+import { useLogin } from "../../hooks/useLogin";
+import { loginSchema } from "../../schemas/loginSchema";
 import { CadeadoIcon } from "./icones";
 import "./login.css";
 
@@ -6,6 +9,24 @@ export default function Login() {
   const COP = "COP";
   const IN = "{IN}";
   const HA = "HA";
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [erroValidacao, setErroValidacao] = useState("");
+
+  const { mutate, isError, isPending } = useLogin();
+
+  function handleSubmit() {
+    const resultado = loginSchema.safeParse({ email, password });
+
+    if (!resultado.success) {
+      setErroValidacao(resultado.error.issues[0].message);
+      return;
+    }
+
+    setErroValidacao("");
+    mutate(resultado.data);
+  }
 
   return (
     <>
@@ -30,6 +51,8 @@ export default function Login() {
             <br />
             <input
               className="input-login"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="admin@copinha.com"
             ></input>
@@ -38,13 +61,19 @@ export default function Login() {
             <label className="label-login">SENHA</label>
             <br />
             <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="input-login"
               type="password"
               placeholder="*********"
             ></input>
           </div>
           <div>
-            <button className="button-login">
+            {erroValidacao && <p style={{ color: "red" }}>{erroValidacao}</p>}
+            {isError && (
+              <p style={{ color: "red" }}>E-mail ou senha incorretos</p>
+            )}
+            <button className="button-login" onClick={handleSubmit}>
               <CadeadoIcon />
               <p>Entrar no painel</p>
             </button>
