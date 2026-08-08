@@ -7,6 +7,7 @@ import Times from "./admin/pages/Times";
 import EstadiosAdmin from "./admin/pages/Estadios";
 import { JogosAdmin } from "./admin/pages/Jogos";
 import Grupos from "./admin/pages/Grupos";
+import Homepage from "./user/pages/Home";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/EstadiosAdmin" element={<EstadiosAdmin />} />
           <Route path="/JogosAdmin" element={<JogosAdmin />} />
           <Route path="/Grupos" element={<Grupos />} />
+          <Route path="/" element={<Homepage />}
         </Routes>
       </BrowserRouter>
     </>
