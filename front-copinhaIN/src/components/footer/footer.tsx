@@ -1,4 +1,6 @@
 import "./footer.css";
+import { Link } from "react-router-dom";
+import LockIcon from "./icon";
 
 export default function Footer() {
   return (
@@ -9,7 +11,14 @@ export default function Footer() {
           <span className="footer-copy">© 2026</span>
         </p>
 
-        <p className="footer-links">Copa do Mundo · Fase de Grupos</p>
+        <div className="footer-links">
+          <p>Copa do Mundo · Fase de Grupos </p>
+          <Link to={"/login"} className="admin-footer">
+            <LockIcon />
+
+            <p>Área administrativa</p>
+          </Link>
+        </div>
       </div>
     </footer>
   );

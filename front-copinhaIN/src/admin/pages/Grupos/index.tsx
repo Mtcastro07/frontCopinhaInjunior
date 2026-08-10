@@ -12,6 +12,7 @@ import type { Grupo } from "../../../types/grupo";
 import type { Time } from "../../../types/time";
 import type { ResultadoPartida } from "../../../types/resultadoPartida";
 import "./Grupos.css";
+import Header from "../../../user/components/Header";
 
 export default function Grupos() {
   const [grupos, setGrupos] = useState<Grupo[]>([]);
@@ -73,7 +74,7 @@ export default function Grupos() {
 
   return (
     <div className="grupos-page">
-      <Navbar />
+      <Header />
 
       <section className="grupos-hero">
         <div className="grupos-hero-container">

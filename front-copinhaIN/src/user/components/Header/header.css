@@ -1,0 +1,59 @@
+.header-container-user-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 86px;
+  background-color: #002776;
+}
+
+.logo-title-user-page {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.links-user-page {
+  display: flex;
+  gap: 4px;
+}
+
+.link-user-page {
+  text-decoration: none;
+}
+
+.header-text-user-page {
+  text-decoration: none;
+  font-family: Barlow;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.header-link-user-page-fechado {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 16px;
+  color: #8ba3bc;
+  transition: 0.3s;
+}
+.header-link-user-page-fechado:hover {
+  background-color: rgba(0, 0, 0, 0.205);
+  z-index: 1000;
+  border-radius: 4px;
+  transition: ease 0.3s;
+}
+
+.header-link-user-page-aberto {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 16px;
+  color: white;
+  background-color: #009c3b;
+  border-radius: 4px;
+}

@@ -1,0 +1,197 @@
+.grupo-tempo-individual-noticia {
+  display: flex;
+  gap: 12px;
+}
+
+.grupo-individual-noticia {
+  display: flex;
+  padding: 4px 8px;
+  font-family: DM Mono;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  leading-trim: NONE;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: #0d1b2a;
+  background-color: #ffdf00;
+  align-items: center;
+  justify-content: center;
+  width: 67px;
+  height: 24px;
+  border-radius: 2px;
+}
+
+.tempo-individual-noticia {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.subtitulo-individual-noticia {
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 29.25px;
+  letter-spacing: 0px;
+  color: #8ba3bc;
+  padding-left: 16px;
+  border-left: solid 2px #ffdf00;
+  margin-top: 16px;
+}
+
+.paragrafo-tempo-individual-page {
+  font-family: DM Mono;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: #8ba3bc;
+}
+
+.text-individual-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 40px 108px;
+}
+
+.autor-individual-noticia {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  border-bottom: solid 1px #ffffff14;
+}
+
+.nome-autor-individual-noticia {
+  font-family: Barlow;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.data-individual-noticia {
+  font-family: DM Mono;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  leading-trim: NONE;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: #8ba3bc;
+  padding-bottom: 32px;
+}
+.imagem-principal-noticia-individual {
+  border-radius: 6px;
+}
+.individual-noticia-content {
+  overflow-y: auto;
+  height: 100vh;
+}
+.imagem-principal-noticia-individual {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.descricao-noticia-individual {
+  font-family: Barlow;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 29.6px;
+  letter-spacing: 0px;
+  color: #f0f4f8e5;
+}
+
+.linha-carrossel-individual-page {
+  width: 95%;
+  color: transparent;
+  height: 2px;
+  background-color: #ffffff14;
+}
+
+.titulo-linha-carrossel-individual-page {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-left: 108px;
+  margin-right: 108px;
+  font-family: Barlow Condensed;
+  font-weight: 900;
+  font-style: Black;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+.carrossel-content-individual-page {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 108px 40px 108px;
+}
+
+.carrossel-individual-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.carrossel-container-individual-page {
+  display: flex;
+}
+.carrossel-content-individual-page {
+  margin: 24px 16px 40px 0px;
+  background-color: #132236;
+  border-radius: 6px;
+  border: solid 1px #ffffff14;
+  padding-top: 10px;
+  padding-bottom: 22px;
+}
+
+.carrossel-container-individual-page {
+  margin-right: 108px;
+  margin-left: 108px;
+}
+
+.carrossel-image-individual-page {
+  width: 455.328125px;
+  height: 244px;
+}
+
+.grupo-carrossel-individual-page {
+  font-family: DM Mono;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 12px;
+  leading-trim: NONE;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: #ffdf00;
+}
+
+.titulo-carrossel-individual-page {
+  font-family: Barlow Condensed;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: #f0f4f8;
+  margin-top: 4px;
+}
+
+.text-carrossel-individual-page {
+  margin-top: 16px;
+  margin-left: 12px;
+  margin-right: 12px;
+}

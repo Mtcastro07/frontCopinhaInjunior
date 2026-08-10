@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLogin } from "../../hooks/useLogin";
 import { loginSchema } from "../../schemas/loginSchema";
 import { CadeadoIcon } from "./icones";
+import { Link } from "react-router-dom";
 import "./login.css";
 
 export default function Login() {
@@ -31,11 +32,13 @@ export default function Login() {
   return (
     <>
       <div className="header-login">
-        <h3 className="title-header-login">
-          {COP}
-          <span className="span-login">{IN}</span>
-          {HA}
-        </h3>
+        <Link to="/" className="link-home-login-page">
+          <h3 className="title-header-login">
+            {COP}
+            <span className="span-login">{IN}</span>
+            {HA}
+          </h3>
+        </Link>
       </div>
       <div className="all-content-login">
         <div className="body-login">

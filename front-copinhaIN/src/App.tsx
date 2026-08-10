@@ -8,6 +8,8 @@ import EstadiosAdmin from "./admin/pages/Estadios";
 import { JogosAdmin } from "./admin/pages/Jogos";
 import Grupos from "./admin/pages/Grupos";
 import Homepage from "./user/pages/Home";
+import IndividualPage from "./user/pages/Individual";
+import Jogos from "./user/pages/Jogos";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/JogosAdmin" element={<JogosAdmin />} />
           <Route path="/Grupos" element={<Grupos />} />
           <Route path="/" element={<Homepage />} />
+          <Route path="/Individual" element={<IndividualPage />}></Route>
+          <Route path="/Jogos" element={<Jogos />} />
         </Routes>
       </BrowserRouter>
     </>

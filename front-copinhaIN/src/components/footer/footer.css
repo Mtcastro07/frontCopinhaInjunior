@@ -3,6 +3,21 @@
   border-top: 1px solid var(--copinha-border);
 }
 
+.footer-links {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-footer {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  color: #8ba3bc;
+  gap: 2.5px;
+}
+
 .footer-container {
   max-width: 1180px;
   margin: 0 auto;
